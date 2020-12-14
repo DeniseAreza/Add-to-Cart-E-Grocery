@@ -1,0 +1,46 @@
+$theme-colors: (
+  "success": #139382,
+  "warning": #FFA446
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// * Scroll behavior
+html{
+  scroll-behavior: smooth;
+  background-color: #f3f3f3;
+}
+// * Scroll behavior
+
+// * Loader: For smooth animation after loading
+.animate {
+  position: relative;
+  -webkit-animation-name: animate;
+  -webkit-animation-duration: 1s;
+  animation-name: animate;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animate {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+// * Loader: For smooth animation after loading
