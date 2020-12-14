@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+    <script defer src="/firebase/firebaseInit.js"></script>
+    <script defer src="/javascript/loader.js"></script>
+    <script defer type="module" src="/firebase/_firebaseCustomerPage.js"></script>
+    <!-- Scripts -->
+
+    <!-- CSS Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- CSS Links -->
+
+    <title>Customer Page</title>
+</head>
+<body onload="loader()">
+    <!--* Loader -->
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow text-success mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!--* Loader -->
+
+    <!-- ! Main Content -->
+    <div style="display:none;" id="allContent" class="animate">
+        <!-- * Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Add to Cart E-Grocery</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Store</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#callToAction">Contact Us</a>
+                  </li>
+                </ul>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-warning" id="logoutBtn">Log out</button>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <!-- * Navbar -->
+
+        <h1 class="display-1">Hello</h1>
+    </div>
+    <!-- ! Main Content -->
+</body>
+</html>
