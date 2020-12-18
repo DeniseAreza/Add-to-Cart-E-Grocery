@@ -10,9 +10,9 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-    <script defer src="/firebase/firebaseInit.js"></script>
+    <script defer src="/firebase/helpers/firebaseInit.js"></script>
     <script defer src="/javascript/loader.js"></script>
-    <script defer type="module" src="/firebase/_firebaseCustomerEditProfile.js"></script>
+    <script defer type="module" src="/firebase/firebase customers/_firebaseCustomerAddress.js"></script>
     <!-- Scripts -->
 
     <!-- CSS Links -->
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <!-- CSS Links -->
 
-    <title>Customer Edit Profile</title>
+    <title>Customer Address Book</title>
 </head>
 <body onload="loader()">
     <!--* Loader -->
@@ -34,7 +34,7 @@
         <!-- * Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/html/_customerPage.html">Add to Cart E-Grocery</a>
+              <a class="navbar-brand" href="/html/customer/_customerPage.html">Add to Cart E-Grocery</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -51,9 +51,9 @@
                       Account
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/html/_customerViewProfile.html">View Profile</a></li>
-                      <li><a class="dropdown-item" href="/html/_customerEditProfile.html">Edit Profile</a></li>
-                      <li><a class="dropdown-item" href="#">Address Book</a></li>
+                      <li><a class="dropdown-item" href="/html/customer/_customerViewProfile.html">View Profile</a></li>
+                      <li><a class="dropdown-item" href="/html/customer/_customerEditProfile.html">Edit Profile</a></li>
+                      <li><a class="dropdown-item" href="/html/customer/_customerAddressBook.html">Address Book</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -69,38 +69,51 @@
         <div class="container">
                 <!-- Title -->
                 <blockquote class="blockquote text-center">
-                    <img src="/bundles/img/undraw_address_udes.svg" class="w50 h-25" alt="">
+                    <img src="/bundles/img/undraw_Map_light_3hjy.svg" class="w50 h-25" alt="">
                     <p class="mb-1 display-4">Hello, <span>User</span></p>
-                    <footer>
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <small>It is important to edit your profile at the very first use of this web application for us to save your account to our database. This will also allow us to know your preferences.</small> 
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </footer>
                 </blockquote>
+                <!-- Title -->
 
-                <form>
-                    <div class="form-group mb-3">
-                      <label for="exampleInputEmail1"><strong>Email address</strong></label> <br>
-                      <span>user@gmail.com</span>
-                    </div>
+                <!-- Add and delete address button -->
+                <p>
+                  <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAddAddress" aria-expanded="false" aria-controls="collapseExample">
+                    Add Address
+                  </button>
+                  <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDeleteAddress" aria-expanded="false" aria-controls="collapseExample">
+                    Delete Address
+                  </button>
+                </p>
 
+                <div class="collapse" id="collapseAddAddress">
+                  <div class="card card-body">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Juan Dela Cruz">
+                      <label for="input_AddAddress" class="form-label"> <h6>Complete Address: </h6><small>House/Unit/Flr #, Bldg Name, Blk or Lot #, Province, City, Barangay</small></label>
+                      <textarea class="form-control" id="input_AddAddress" rows="3"></textarea>
+                      <button type="submit" class="btn btn-warning mt-2">Add</button>
                     </div>
+                  </div>
+                </div>
 
+                <div class="collapse" id="collapseDeleteAddress">
+                  <div class="card card-body">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-                        <input type="email" class="form-control" maxlength="11" id="exampleFormControlInput1" placeholder="09xxxxxxxxx">
+                      <label for="delete_Address" class="form-label"><h6>Code</h6></small></label>
+                      <input type="email" class="form-control w-50" id="delete_Address" placeholder="UID">
+                      <button type="submit" class="btn btn-danger mt-2">Delete</button>
                     </div>
-                    
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">By checking this out, I confirm that all my details here are correct.</label>
-                    </div>
-                    <button type="submit" class="btn btn-warning">Submit</button>
-                </form>    
+                  </div>
+                </div>
+                <!-- Add address button -->
+
+                <!-- Preview -->
+                <p class="display-5 text-center">Address Book</p>
+                <div class="card">
+                  <div class="card-body">
+                    <h5>Address 1</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est fugiat magni natus doloremque voluptas ipsum distinctio, architecto quod ullam sint, eum odit odio quos placeat! Ab, earum? Velit, in ea.</p>
+                  </div>
+                </div>
+                <!-- Preview -->
         </div>
         <!-- * Main Form for edit profile -->
     </div>

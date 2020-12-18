@@ -10,9 +10,9 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-    <script defer src="/firebase/firebaseInit.js"></script>
+    <script defer src="/firebase/helpers/firebaseInit.js"></script>
     <script defer src="/javascript/loader.js"></script>
-    <script defer type="module" src="/firebase/_firebaseCustomerPage.js"></script>
+    <script defer type="module" src="/firebase/firebase customers/_firebaseCustomerViewProfile.js"></script>
     <!-- Scripts -->
 
     <!-- CSS Links -->
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <!-- CSS Links -->
 
-    <title>Customer Page</title>
+    <title>Customer View Profile</title>
 </head>
 <body onload="loader()">
     <!--* Loader -->
@@ -34,26 +34,26 @@
         <!-- * Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/html/_customerPage.html">Add to Cart E-Grocery</a>
+              <a class="navbar-brand" href="/html/customer/_customerPage.html">Add to Cart E-Grocery</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="">Store</a>
+                    <a class="nav-link" aria-current="page" href="">Store</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="">Contact Us</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Account
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/html/_customerViewProfile.html">View Profile</a></li>
-                      <li><a class="dropdown-item" href="/html/_customerEditProfile.html">Edit Profile</a></li>
-                      <li><a class="dropdown-item" href="#">Address Book</a></li>
+                      <li><a class="dropdown-item" href="/html/customer/_customerViewProfile.html">View Profile</a></li>
+                      <li><a class="dropdown-item" href="/html/customer/_customerEditProfile.html">Edit Profile</a></li>
+                      <li><a class="dropdown-item" href="/html/customer/_customerAddressBook.html">Address Book</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -64,13 +64,33 @@
             </div>
         </nav>
         <!-- * Navbar -->
+        
+        <!-- * Main Form for edit profile -->
+        <div class="container">
+                <!-- Title -->
+                <blockquote class="blockquote text-center">
+                    <img src="/bundles/img/undraw_online_ad_mg4t.svg" class="w-50 h-25 mt-2" alt="">
+                    <p class="mb-1 display-4">Hello, <span>User</span></p>
+                </blockquote>
 
-        <!-- * Alert for reminder -->
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Holy guacamole!</strong> Have you edited your profile already? You need to do that first to permanently save your account in our database.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <form>
+                    <div class="form-group mb-3">
+                      <label for="exampleInputEmail1"><strong>Email address</strong></label> <br>
+                      <span>user@gmail.com</span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="exampleInputEmail1"><strong>Full Name</strong></label> <br>
+                        <span>user</span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="exampleInputEmail1"><strong>Mobile Number</strong></label> <br>
+                      <span>09xxxxxxxxx</span>
+                    </div>
+                </form>    
         </div>
-        <!-- * Alert for reminder -->
+        <!-- * Main Form for edit profile -->
     </div>
     <!-- ! Main Content -->
 </body>
