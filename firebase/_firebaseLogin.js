@@ -28,6 +28,21 @@ function signInClicked() {
 }
 // *
 
+// * Function for creating account for users
+$('#registerBtn').click(createAccountUser);
+function createAccountUser() {
+    let signupNewEmail = $('#register_InputEmail').val();
+    let signupNewPassword = $('#register_InputPassword').val();
+    FirebaseUsers.createUser(signupNewEmail, signupNewPassword)
+                .then(() => {
+                    window.location.href = 'html/_customerPage.html';
+                    console.log('Sucessfully logged in');
+                }, function () {
+                    $('#invalid-feedback').show();
+                    console.log('failed to log in');
+                })
+}
+
 // * Function for determining access level
 FirebaseHelper
         .getSnapShot('users')
