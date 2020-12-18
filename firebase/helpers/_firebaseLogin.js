@@ -47,7 +47,7 @@ function createAccountUser() {
 FirebaseHelper
         .getSnapShot('users')
         .then(function(value) {
-            let {name, state} = value;
+            let {state} = value;
             if (state == 'admin') {
                 window.location.href = 'html/admin/_adminPage.html';
             } else {

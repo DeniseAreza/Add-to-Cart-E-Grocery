@@ -2,6 +2,7 @@
 
 // Import
 import * as FirebaseUsers from '../helpers/firebaseUsers.js'
+import * as FirebaseHelper from '../helpers/firebaseHelper.js'
 
 // * Function that uses checkActiveUser() promise
 FirebaseUsers.checkActiveUser()
@@ -23,3 +24,15 @@ function signOutClicked() {
                     console.log('still logged in')
                 });
 }
+
+$('#updateBtn').click(updateProfile)
+function updateProfile() {
+    FirebaseHelper.editProfile('users')                    
+}
+
+FirebaseHelper
+        .getSnapShot('users')
+        .then(function(value) {
+            let {name} = value;
+            document.getElementById('currentUserName').innerHTML = name;
+        })
