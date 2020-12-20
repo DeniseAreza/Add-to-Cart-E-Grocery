@@ -25,11 +25,13 @@ function signOutClicked() {
                 });
 }
 
+// * Function that updates the profile of the new/old user
 $('#updateBtn').click(updateProfile)
 function updateProfile() {
     FirebaseHelper.editProfile('users')                    
 }
 
+// * Function that will retrieve current user's data
 FirebaseHelper
         .getSnapShot('users')
         .then(function(value) {

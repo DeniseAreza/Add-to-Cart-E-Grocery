@@ -70,7 +70,7 @@
                 <!-- Title -->
                 <blockquote class="blockquote text-center">
                     <img src="/bundles/img/undraw_Map_light_3hjy.svg" class="w50 h-25" alt="">
-                    <p class="mb-1 display-4">Hello, <span>User</span></p>
+                    <p class="mb-1 display-4">Hello, <span id="currentUserName">User</span></p>
                 </blockquote>
                 <!-- Title -->
 
@@ -89,7 +89,7 @@
                     <div class="mb-3">
                       <label for="input_AddAddress" class="form-label"> <h6>Complete Address: </h6><small>House/Unit/Flr #, Bldg Name, Blk or Lot #, Province, City, Barangay</small></label>
                       <textarea class="form-control" id="input_AddAddress" rows="3"></textarea>
-                      <button type="submit" class="btn btn-warning mt-2">Add</button>
+                      <button type="submit" class="btn btn-warning mt-2" id="addAddressBtn">Add</button>
                     </div>
                   </div>
                 </div>
@@ -99,7 +99,7 @@
                     <div class="mb-3">
                       <label for="delete_Address" class="form-label"><h6>Code</h6></small></label>
                       <input type="email" class="form-control w-50" id="delete_Address" placeholder="UID">
-                      <button type="submit" class="btn btn-danger mt-2">Delete</button>
+                      <button type="submit" class="btn btn-danger mt-2" id="deleteAddressBtn">Delete</button>
                     </div>
                   </div>
                 </div>

@@ -2,6 +2,7 @@
 
 // Import
 import * as FirebaseUsers from '../helpers/firebaseUsers.js'
+import * as FirebaseHelper from '../helpers/firebaseHelper.js'
 
 // * Function that uses checkActiveUser() promise
 FirebaseUsers.checkActiveUser()
@@ -23,3 +24,17 @@ function signOutClicked() {
                     console.log('still logged in')
                 });
 }
+
+// *Function that add address to the address book
+$('#addAddressBtn').click(editAddressBook)
+function editAddressBook() {
+    FirebaseHelper.addAddress('users')
+}
+
+// * Function that will retrieve current user's data
+FirebaseHelper
+        .getSnapShot('users')
+        .then(function(value) {
+            let {name} = value;
+            document.getElementById('currentUserName').innerHTML = name;
+        })

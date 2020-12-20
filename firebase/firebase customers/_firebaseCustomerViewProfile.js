@@ -28,8 +28,9 @@ function signOutClicked() {
 FirebaseHelper
         .getSnapShot('users')
         .then(function(value) {
-            let {name, mobileNumber, email} = value;
+            let {name, mobileNumber, email, address} = value;
             document.getElementById('currentFullName').innerHTML = name;
             document.getElementById('currentUserMobile').innerHTML = mobileNumber;
             document.getElementById('currentUserEmail').innerHTML = email;
+            document.getElementById('currentUserAddress').innerHTML = address;
         })
