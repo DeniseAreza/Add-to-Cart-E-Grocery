@@ -8,10 +8,9 @@ import * as FirebaseUsers from './firebaseUsers.js'
 // getSnapShot == value from the database
 // *
 
+// ! Retrieval of data
 // * Handling event that retrieves the active user of this website
-// yung path kukunin sa firebase signin
-// so kukunin niya  yung 'users'
-// name and state as value galing sa firebase signin js
+// used for all retrieval of profile details
 export function getSnapShot(path) {
     return new Promise (function (resolve, reject) {
         FirebaseUsers.checkActiveUser()
@@ -26,7 +25,9 @@ export function getSnapShot(path) {
     })
 }
 // *
+// ! 
 
+// ! For handling input in database
 // * Handling event that uploads new details from the user
 export function editProfile(path) {
     FirebaseUsers.checkActiveUser()
@@ -48,3 +49,4 @@ export function editProfile(path) {
                 })
 }
 // *
+// ! 

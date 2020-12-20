@@ -38,8 +38,8 @@ function createAccountUser() {
                     window.location.href = 'html/customer/_customerPage.html';
                     console.log('Sucessfully logged in');
                 }, function () {
-                    $('#invalid-feedback').show();
                     console.log('failed to log in');
+                    $('#errorAlertRegister').show();
                 })
 }
 

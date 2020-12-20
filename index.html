@@ -90,25 +90,24 @@
                     <div class="alert alert-danger collapse" role="alert" id="errorAlert">
                         <strong>Error!</strong> Your Email and Password are not correct.
                     </div>
+                    <div class="alert alert-danger collapse" role="alert" id="errorAlertRegister">
+                      <strong>Error!</strong> Please repeat your registration.
+                    </div>
                     <div class="alert alert-success collapse" role="alert" id="successAlert">
                         You are now logged in.
                     </div>
                     <!-- * Alert triggers -->
 
                     <!-- Email Address -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Email Address" aria-label="Email Address" id="register_InputEmail" required>
-                        <div class="invalid-feedback">
-                            Incorrect Email.
-                        </div>
+                    <div class="mb-3">
+                      <label for="register_InputEmail" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="register_InputEmail" placeholder="name@example.com">
                     </div>
 
                     <!-- Password -->
-                    <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <label for="register_InputPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" placeholder="Password: Must be more than 8 characters" aria-label="Password" id="register_InputPassword" required>
-                        <div class="invalid-feedback">
-                            Incorrect Password.
-                        </div>
                     </div>
 
                     <div class="alert alert-success" role="alert">
