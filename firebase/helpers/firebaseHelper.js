@@ -42,7 +42,7 @@ export function editProfile(path) {
                     var storageref = firebase.database().ref(`${path}/${value.uid}`).child('profile')
                         
                     // set the details to the database
-                    storageref.set({
+                    storageref.update({
                         name: customerName,
                         mobileNumber: customerMobileNumber,
                         email: customerEmail,

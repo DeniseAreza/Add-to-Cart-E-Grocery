@@ -1,111 +1,181 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-    <script defer src="/firebase/helpers/firebaseInit.js"></script>
-    <script defer src="/javascript/loader.js"></script>
-    <script defer type="module" src="/firebase/firebase customers/_firebaseCustomerEditProfile.js"></script>
-    <!-- Scripts -->
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+  </script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+  <script defer src="/firebase/helpers/firebaseInit.js"></script>
+  <script defer src="/javascript/loader.js"></script>
+  <script defer type="module" src="/firebase/firebase customers/_firebaseCustomerEditProfile.js"></script>
+  <!-- Scripts -->
 
-    <!-- CSS Links -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/main.css">
-    <!-- CSS Links -->
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/main.css">
+  <!-- CSS Links -->
 
-    <title>Customer Edit Profile</title>
+  <title>Customer Edit Profile</title>
 </head>
+
 <body onload="loader()">
-    <!--* Loader -->
-    <div class="d-flex justify-content-center">
-        <div class="spinner-grow text-success mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
-    </div>
-    <!--* Loader -->
+  <!--* Loader -->
+  <div class="d-flex justify-content-center">
+    <div class="spinner-grow text-success mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
+  </div>
+  <!--* Loader -->
 
-    <!-- ! Main Content -->
-    <div style="display:none;" id="allContent" class="animate">
-        <!-- * Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/html/customer/_customerPage.html">Add to Cart E-Grocery</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="">Store</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Contact Us</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Account
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/html/customer/_customerViewProfile.html">View Profile</a></li>
-                      <li><a class="dropdown-item" href="/html/customer/_customerEditProfile.html">Edit Profile</a></li>
-                      <li><a class="dropdown-item" href="/html/customer/_customerAddressBook.html">Address Book</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <div class="d-flex">
-                    <button type="button" class="btn btn-warning" id="logoutBtn">Log out</button>
-                </div>
-              </div>
-            </div>
-        </nav>
-        <!-- * Navbar -->
-        
-        <!-- * Main Form for edit profile -->
-        <div class="container">
-                <!-- Title -->
-                <blockquote class="blockquote text-center">
-                    <img src="/bundles/img/undraw_address_udes.svg" class="w50 h-25" alt="">
-                    <p class="mb-1 display-4">Hello, <span id="currentUserName">User</span></p>
-                    <footer>
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <small>It is important to edit your profile at the very first use of this web application for us to save your account to our database. This will also allow us to know your preferences.</small> 
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    </footer>
-                </blockquote>
-
-                
-                    <div class="form-group mb-3">
-                      <label for="input_customerEmail">Email address</label> <br>
-                      <input type="email" class="form-control" id="input_customerEmail" placeholder="example@gmail.com">
-                      <small>Please enter your active email address. <strong>Note: This email address will be only used for transactions. Your entered email address during your registration is still your email address when logging in to your account.</strong></small>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="input_customerName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="input_customerName" placeholder="Juan Dela Cruz">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="input_customerMobileNumber" class="form-label">Mobile Number</label>
-                        <input type="text" class="form-control" maxlength="11" id="input_customerMobileNumber" placeholder="09xxxxxxxxx">
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="input_AddAddress" class="form-label"> <h6>Complete Address: </h6><small>House/Unit/Flr #, Bldg Name, Blk or Lot #, Province, City, Barangay</small></label>
-                      <textarea class="form-control" id="input_AddAddress" rows="3"></textarea>
-                    </div>
-                    
-                    <button class="btn btn-warning" id="updateBtn">Update Account</button>
-                  
+  <!-- ! Main Content -->
+  <div style="display:none;" id="allContent" class="animate">
+    <!-- * Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/html/customer/_customerPage.html">Add to Cart E-Grocery</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="">Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/html/customer/_customerContactUs.html">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/html/customer/_customerViewProfile.html">View Profile</a></li>
+                <li><a class="dropdown-item" href="/html/customer/_customerEditProfile.html">Edit Profile</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button type="button" class="btn btn-warning" id="logoutBtn">Log out</button>
+          </div>
         </div>
-        <!-- * Main Form for edit profile -->
+      </div>
+    </nav>
+    <!-- * Navbar -->
+
+    <!-- * Main Form for edit profile -->
+    <div class="container">
+      <!-- Title -->
+      <blockquote class="blockquote text-center">
+        <img src="/bundles/img/undraw_address_udes.svg" class="w50 h-25" alt="">
+        <p class="mb-1 display-4">Hello, <span id="currentUserName">User</span></p>
+        <footer>
+          <!-- Reminder -->
+          
+        </footer>
+      </blockquote>
+
+      <!-- Collapse button for instructions -->
+      <!-- Title -->
+      <p class="text-center display-6">Instructions</p>
+      <!-- Buttons -->
+      <p class="text-center">
+        <button class="btn btn-warning m-2" type="button" data-bs-toggle="collapse" data-bs-target="#instruction_newUser" aria-expanded="false" aria-controls="collapseExample">
+          Click here if you are a new user.
+        </button>
+
+        <button class="btn btn-success m-2" type="button" data-bs-toggle="collapse" data-bs-target="#instruction_updateUser" aria-expanded="false" aria-controls="collapseExample">
+          Click here if you want to update your account.
+        </button>
+      </p>
+
+      <!-- card group for collapse button -->
+      <div class="collapse" id="instruction_newUser">
+        <div class="card card-body">
+          <div class="alert alert-warning" role="alert">
+            1. Please complete the form below. <br> 2. Click the "Update Account" button. <br> 3. It is important to complete this step at the very start of your registration to save your account in our database. Completing this form will also serve as your verification for your account. <br> <strong>Note: Please do not leave blank input areas.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse" id="instruction_updateUser">
+        <div class="card card-body">
+          <div class="alert alert-success" role="alert">
+            1. Please complete the form below. <br> 2. Click the "Update Account" button.  <br> <strong>Note: You have to COMPLETE ALL input areas. Answering this form completely will serve as your account verification. <br> Note: Updating all details in your account will help us know your latest contact details for transacations.</strong>
+          </div>
+        </div>
+      </div>
+      <!-- Collapse button for instructions -->
+
+      <!-- Form -->
+      <form class="was-validated">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="input_customerName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="input_customerName" placeholder="Juan Dela Cruz" required>
+          <div class="invalid-feedback">
+            Please enter your name.
+          </div>
+        </div>
+
+        <!-- Email Address -->
+        <div class="mb-3">
+          <label for="input_customerEmail">Email address</label> <br>
+          <input type="email" class="form-control" id="input_customerEmail" placeholder="example@gmail.com" required>
+          <div class="invalid-feedback">
+            Please enter your Email Address.
+          </div>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="mb-3">
+          <label for="input_customerMobileNumber" class="form-label">Mobile Number</label>
+          <input type="text" class="form-control" maxlength="11" id="input_customerMobileNumber"
+            placeholder="09xxxxxxxxx" required>
+          <div class="invalid-feedback">
+            Please enter your Mobile Number.
+          </div>
+        </div>
+
+        <!-- Complete Address -->
+        <div class="mb-3">
+          <label for="input_AddAddress" class="form-label">
+            <h6>Complete Address: </h6><small>House/Unit/Flr #, Bldg Name, Blk or Lot #, Province, City,
+              Barangay</small>
+          </label>
+          <textarea class="form-control" id="input_AddAddress" rows="3" required></textarea>
+          <div class="invalid-feedback">
+            Please enter your COMPLETE ADDRESS. Follow the format mentioned.
+          </div>
+        </div>
+
+        <!-- Reminder -->
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <small>To confirm your update for your account, please re-enter all profile details that have no changes to
+            permanently save your profile.</small>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- Update Button -->
+        <div class="mb-3">
+          <button class="btn btn-warning mb-3" id="updateAllBtn" type="submit">Update Account</button>
+        </div>
+      </form>
+      <!-- Form -->
     </div>
-    <!-- ! Main Content -->
+    <!-- * Main Form for edit profile -->
+  </div>
+  <!-- ! Main Content -->
 </body>
+
 </html>

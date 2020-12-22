@@ -2,7 +2,6 @@
 
 // Import
 import * as FirebaseUsers from '../helpers/firebaseUsers.js'
-import * as FirebaseHelper from '../helpers/firebaseHelper.js'
 
 // * Function that uses checkActiveUser() promise
 FirebaseUsers.checkActiveUser().then(
@@ -29,14 +28,3 @@ function signOutClicked () {
   )
 }
 
-// * Function that updates the profile of the new/old user
-$('#updateAllBtn').click(updateProfile)
-function updateProfile () {
-  FirebaseHelper.editProfile('users')
-}
-
-// * Function that will retrieve current user's data
-FirebaseHelper.getSnapShot('users').then(function (value) {
-  let { name } = value
-  document.getElementById('currentUserName').innerHTML = name
-})
