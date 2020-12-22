@@ -61,27 +61,4 @@ export function editProfile (path) {
   })
 }
 // *
-
-// * Handling event that adds address to the current user's address book
-export function addAddress (path) {
-  FirebaseUsers.checkActiveUser().then(function (value) {
-    // get data
-    let customerAddress = $('#input_AddAddress').val()
-
-    // set database reference
-    var storageref = firebase
-      .database()
-      .ref(`${path}/${value.uid}`)
-      .child('profile')
-
-    // set the address to the profile database
-    storageref.set({
-      address: customerAddress
-    })
-
-    // notification that the editing of profile is successful
-    alert('success')
-    location.reload()
-  })
-}
 // !
