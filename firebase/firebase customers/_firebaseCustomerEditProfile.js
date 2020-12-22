@@ -33,7 +33,6 @@ function signOutClicked () {
 $('#updateAllBtn').click(updateProfile)
 function updateProfile () {
   FirebaseHelper.editProfile('users')
-  window.location.replace('_customerViewProfile.html');
 }
 
 // * Function that will retrieve current user's data
