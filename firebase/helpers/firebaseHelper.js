@@ -51,7 +51,7 @@ export function editProfile(path) {
                     })
 
                     // notification that the editing of profile is successful
-                    window.location.replace('_customerViewProfile.html');
+                    alert('Success')
                 })
 }
 // *
