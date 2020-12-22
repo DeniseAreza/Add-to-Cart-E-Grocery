@@ -10,9 +10,9 @@
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
-    <script defer src="/firebase/firebaseInit.js"></script>
+    <script defer src="/firebase/helpers/firebaseInit.js"></script>
     <script defer src="/javascript/loader.js"></script>
-    <script defer type="module" src="/firebase/_firebaseLogin.js"></script>
+    <script defer type="module" src="/firebase/helpers/_firebaseLogin.js"></script>
     <!-- Scripts -->
 
     <!-- CSS Links -->
@@ -90,25 +90,24 @@
                     <div class="alert alert-danger collapse" role="alert" id="errorAlert">
                         <strong>Error!</strong> Your Email and Password are not correct.
                     </div>
+                    <div class="alert alert-danger collapse" role="alert" id="errorAlertRegister">
+                      <strong>Error!</strong> Please repeat your registration.
+                    </div>
                     <div class="alert alert-success collapse" role="alert" id="successAlert">
                         You are now logged in.
                     </div>
                     <!-- * Alert triggers -->
 
                     <!-- Email Address -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Email Address" aria-label="Email Address" id="register_InputEmail" required>
-                        <div class="invalid-feedback">
-                            Incorrect Email.
-                        </div>
+                    <div class="mb-3">
+                      <label for="register_InputEmail" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="register_InputEmail" placeholder="name@example.com">
                     </div>
 
                     <!-- Password -->
-                    <div class="input-group mb-3">
+                    <div class="mb-3">
+                        <label for="register_InputPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" placeholder="Password: Must be more than 8 characters" aria-label="Password" id="register_InputPassword" required>
-                        <div class="invalid-feedback">
-                            Incorrect Password.
-                        </div>
                     </div>
 
                     <div class="alert alert-success" role="alert">
@@ -195,42 +194,6 @@
             </div>
         </div>
         <!-- * Card Group -->
-
-        <!-- * Call to Action -->
-        <div class="p-2 bd-highlight" id="callToAction">
-            
-            <div class="container" id="calltoAction">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h5 class="card-title display-3">Need some help?</h5>
-                  <p class="card-text">We understand that trying a new service can be scary, that's why we want you to make this 100% risk-free for you. <br> <strong>You may call one of our trusted admins:</strong></p>
-
-                  <p>
-                    <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseFirst" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Almira Chavez-Cunanan
-                    </a>
-                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecond" aria-expanded="false" aria-controls="collapseExample">
-                        Violeta Miranda 
-                    </button>
-                  </p>
-
-                  <div class="collapse" id="collapseFirst">
-                    <div class="card card-body">
-                        <h3 class="alert alert-success">Mobile: 09178602210</h3>
-                    </div>
-                  </div>
-
-                  <div class="collapse" id="collapseSecond">
-                    <div class="card card-body">
-                        <h3 class="alert alert-warning">Mobile: 09178169109</h3>
-                    </div>
-                  </div>
-
-                  <img src="/bundles/img/undraw_elements_cipa.svg" alt="" style="width: 250px; height: 300px;">
-                </div>
-            </div>
-        </div>
-        <!-- * Call to Action -->
     </div>
     <!-- ! Main Content -->
 </body>
