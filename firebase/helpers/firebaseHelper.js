@@ -52,7 +52,7 @@ export function editProfile(path) {
 
                     // notification that the editing of profile is successful
                     alert('success')
-                    location.reload()
+                    window.location.href = 'html/customer/_customerViewProfile.html';
                 })
 }
 // *
