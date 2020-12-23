@@ -1,7 +1,7 @@
 // ! this Js will handle all queries
 
 // * Imports
-import * as FirebaseUsers from './firebaseUsers.js'
+import * as FirebaseUsers from '../helpers/firebaseUsers.js'
 
 // * Dictionary
 // path == address
