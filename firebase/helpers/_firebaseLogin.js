@@ -28,15 +28,30 @@ function signInClicked() {
 }
 // *
 
+// * Function for creating account for users
+$('#registerBtn').click(createAccountUser);
+function createAccountUser() {
+    let signupNewEmail = $('#register_InputEmail').val();
+    let signupNewPassword = $('#register_InputPassword').val();
+    FirebaseUsers.createUser(signupNewEmail, signupNewPassword)
+                .then(() => {
+                    window.location.href = 'html/customer/_customerPage.html';
+                    console.log('Sucessfully logged in');
+                }, function () {
+                    console.log('failed to log in');
+                    $('#errorAlertRegister').show();
+                })
+}
+
 // * Function for determining access level
 FirebaseHelper
         .getSnapShot('users')
         .then(function(value) {
-            let {name, state} = value;
+            let {state} = value;
             if (state == 'admin') {
-                window.location.href = 'html/_adminPage.html';
+                window.location.href = 'html/admin/_adminPage.html';
             } else {
-                window.location.href = 'html/_customerPage.html';
+                window.location.href = 'html/customer/_customerPage.html';
             }
 
         })
