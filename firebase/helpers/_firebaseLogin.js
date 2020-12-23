@@ -1,6 +1,6 @@
 // ! Imports
-import * as FirebaseUsers from './firebaseUsers.js';
-import * as FirebaseHelper from './firebaseHelper.js' 
+import * as FirebaseUsers from '../helpers/firebaseUsers.js';
+import * as FirebaseHelper from '../helpers/firebaseHelper.js' 
 
 // * Function that uses checkActiveUser() promise
 FirebaseUsers.checkActiveUser()
