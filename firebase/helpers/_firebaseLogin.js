@@ -49,9 +49,9 @@ FirebaseHelper
         .then(function(value) {
             let {state} = value;
             if (state == 'admin') {
-                window.location.href = 'html/admin/_adminPage.html';
+                window.location.href = 'html/admin/_adminStore.html';
             } else {
-                window.location.href = 'html/customer/_customerPage.html';
+                window.location.href = 'html/customer/_customerStore.html';
             }
 
         })
