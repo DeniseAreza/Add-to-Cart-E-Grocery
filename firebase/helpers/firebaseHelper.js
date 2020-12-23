@@ -26,6 +26,22 @@ export function getSnapShot (path) {
   })
 }
 // *
+
+// * Retrieval of all users from the database
+export function retrieveDBUsers() {
+  // Create reference
+  var rootReference = firebase.database().ref().child('users');
+
+  //get records from the database
+  rootReference.on('child_added', snapshot =>{
+      //get the attributes from the database
+      var name = snapshot.child('profile').child('name').val();
+      var state = snapshot.child('profile').child('state').val();
+
+       //Show the records to the html table
+       $('#table_body_users').prepend("<tr><td>"+ name +"</td><td>"+ state +"</td></tr>")
+    })
+}   
 // !
 
 // ! For handling input in database
