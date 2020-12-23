@@ -35,7 +35,7 @@ function createAccountUser() {
     let signupNewPassword = $('#register_InputPassword').val();
     FirebaseUsers.createUser(signupNewEmail, signupNewPassword)
                 .then(() => {
-                    window.location.href = 'html/customer/_customerPage.html';
+                    window.location.href = 'html/customer/_customerStore.html';
                     console.log('Sucessfully logged in');
                 }, function () {
                     console.log('failed to log in');
