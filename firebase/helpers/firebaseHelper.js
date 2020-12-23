@@ -70,7 +70,7 @@ export function editProfile (path) {
     })
 
      // notification that the editing of profile is successful
-    alert('successful')
+     console.log('successful edit of profile')
     window.location.href = '_customerViewProfile.html'
   }, function () {
       alert('Error: Please retry.')
