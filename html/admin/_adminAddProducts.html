@@ -17,7 +17,7 @@
   <script defer src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script defer src="/firebase/helpers/firebaseInit.js"></script>
   <script defer src="/javascript/loader.js"></script>
-  <script defer type="module" src="/firebase/firebaseAdmin/_firebaseAdminPage.js"></script>
+  <script defer type="module" src="/firebase/firebaseAdmin/_firebaseAdminAddProducts.js"></script>
   <!-- Scripts -->
 
   <!-- CSS Links -->
@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/styles/main.css">
   <!-- CSS Links -->
 
-  <title>Edit Store</title>
+  <title>Admin Add Products</title>
 </head>
 
 <body onload="loader()">
@@ -79,44 +79,12 @@
     <div class="container-fluid">
       <!-- Title -->
       <blockquote class="blockquote text-center">
-        <img src="/bundles/img/undraw_online_ad_mg4t.svg" class="w-50 h-25 mt-3" alt="">
+        <img src="/bundles/img/addProducts.svg" class="w-50 h-25 mt-3" alt="">
         <p class="mb-1 display-4">Hello, <span id="currentUserName">User</span></p>
         <footer>
-          <small>You can edit your products here.</small>
+          <small>Add products</small>
         </footer>
       </blockquote>
-
-      <!--  Card Group -->
-        <div class="container">
-          <div class="row mt-5">
-
-            <!-- Add Products -->
-            <div class="col-md-4" id="card_addProduct">
-              <div class="products card-1">
-                <h3>Add Products</h3>
-                <p>Click here to add new products in your store.</p>
-              </div>
-            </div>
-
-            <!-- Update Products -->
-            <div class="col-md-4" id="card_updateProduct">
-              <div class="products card-2">
-                <h3>Update Products</h3>
-                <p>Click here to update existing product from your store.</p>
-              </div>
-            </div>
-
-            <!-- Delete Products -->
-            <div class="col-md-4" id="card_deleteProduct">
-              <div class="products card-3">
-                <h3>Delete Products</h3>
-                <p>Click here to delete products from your store.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      <!--  Card Group -->
     </div>
     <!-- * Main div class -->
   </div>
