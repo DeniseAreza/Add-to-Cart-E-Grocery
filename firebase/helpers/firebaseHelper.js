@@ -67,7 +67,7 @@ export function homeCareProducts() {
         var productCode = snapshot.child('Code').val();
 
         // Retrieve all to this style
-        $('#productsDB').append('<div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center m-2"><div class="col h-25 w-50"><div class="card"><img src='+ productImage +' class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title display-6">'+ productName +'</h5><h6>Category: '+ productCategory +'</h6><h6>Code: '+ productCode +'</h6><h6>Availability: '+ productAvailability +'</h6><h6>Price: Php '+ productPrice +'</h6><button type="button" class="btn btn-warning w-100" id="addToCart">Add to cart</button></div></div></div></div>');
+        $('#productsDB').append('<div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center m-2"><div class="col w-100"><div class="card"><img src='+ productImage +' class="card-img-top rounded mx-auto d-block" alt="..." style = "height:30%; width: 50%;"><div class="card-body"><h5 class="card-title display-6">'+ productName +'</h5><h6>Category: '+ productCategory +'</h6><h6>Code: '+ productCode +'</h6><h6>Availability: '+ productAvailability +'</h6><h6>Price: Php '+ productPrice +'</h6><button type="button" class="btn btn-warning w-100" id="addToCart">Add to cart</button></div></div></div></div>');
     })
 }
 // !
