@@ -27,19 +27,9 @@ function signOutClicked() {
 }
 // ! Important funtions for all js
 
-// ! Retrieval functions
-// * Event that will retrieve the user's information from the database
-FirebaseHelper
-        .getSnapShot('users')
-        .then(function(value) {
-            let {name} = value;
-            document.getElementById('currentUserName').innerHTML = name;
-        })
-// !
-
-// ! Edit Store Button Cards for redirecting to their respective pages
-$('#card_addProduct').click(redirectAddProduct)
-function redirectAddProduct() {
-    window.location.href = '_adminAddProducts.html'
+// * Redirecting to another page
+$('#card_HomeCare').click(redirect)
+function redirect() {
+    window.location.href = '_adminHomeCare.html'
 }
-// !
+// *

@@ -37,9 +37,11 @@ FirebaseHelper
         })
 // !
 
-// ! Edit Store Button Cards for redirecting to their respective pages
-$('#card_addProduct').click(redirectAddProduct)
-function redirectAddProduct() {
-    window.location.href = '_adminAddProducts.html'
+// ! Uploading to database
+// * Event that uploads new product
+$('#submitNewProduct').click(addNewProduct)
+function addNewProduct() {
+    FirebaseHelper.addProduct()
 }
+
 // !
