@@ -27,21 +27,6 @@ function signOutClicked() {
 }
 // ! Important funtions for all js
 
-// ! Retrieval functions
-// * Event that will retrieve the user's information from the database
-FirebaseHelper
-        .getSnapShot('users')
-        .then(function(value) {
-            let {name} = value;
-            document.getElementById('currentUserName').innerHTML = name;
-        })
-// !
-
-// ! Uploading to database
-// * Event that uploads new product
-$('#submitNewProduct').click(addNewProduct)
-function addNewProduct() {
-    FirebaseHelper.addProduct()
-}
-
+// ! Retrieval
+FirebaseHelper.homeCareProducts()
 // !
