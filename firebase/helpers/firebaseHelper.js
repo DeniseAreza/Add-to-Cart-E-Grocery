@@ -54,6 +54,7 @@ export function retrieveDBUsers () {
   })
 }
 
+// * Retrieval of all products
 // * Retrieval of Home Care Products
 export function homeCareProducts() {
   var rootReference = firebase.database().ref('Products').child('Home Care');
@@ -67,9 +68,28 @@ export function homeCareProducts() {
         var productCode = snapshot.child('Code').val();
 
         // Retrieve all to this style
-        $('#productsDB').append('<div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center m-2"><div class="col w-100"><div class="card"><img src='+ productImage +' class="card-img-top rounded mx-auto d-block" alt="..." style = "height:30%; width: 50%;"><div class="card-body"><h5 class="card-title display-6">'+ productName +'</h5><h6>Category: '+ productCategory +'</h6><h6>Code: '+ productCode +'</h6><h6>Availability: '+ productAvailability +'</h6><h6>Price: Php '+ productPrice +'</h6><button type="button" class="btn btn-warning w-100" id="addToCart">Add to cart</button></div></div></div></div>');
+        $('#productsHomeCareDB').append('<div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center m-2"><div class="col w-100"><div class="card"><div class="card-body"><h5 class="card-title display-6">'+ productName +'</h5><h6>Category: '+ productCategory +'</h6><h6>Code: '+ productCode +'</h6><h6>Availability: '+ productAvailability +'</h6><h6>Price: Php '+ productPrice +'</h6><p><a class="btn btn-light" data-bs-toggle="collapse"  href="#collapseImageHomeCare" role="button" aria-expanded="false" aria-controls="collapseImageHomeCare">Click to See Image</a></p><div class="row"><div class="col"><div class="collapse multi-collapse" id="collapseImageHomeCare"><div class="card card-body"><img src='+ productImage +' class="card-img-top rounded mx-auto d-block" alt="..." style = "height:30%; width: 50%;"></div></div</div></div><button type="button" class="btn btn-warning w-100" id="addToCart">Add to cart</button></div></div></div></div>');
     })
 }
+// *
+
+// * Retrieval of Meat Products and Eggs
+export function meatProducts() {
+  var rootReference = firebase.database().ref('Products').child('Home Care');
+
+    rootReference.on('child_added', snapshot =>{
+        var productName = snapshot.child('Name').val();
+        var productCategory = snapshot.child('productCategory').val();
+        var productPrice = snapshot.child('Price').val();
+        var productImage = snapshot.child('URL').val();
+        var productAvailability = snapshot.child('Availability').val();
+        var productCode = snapshot.child('Code').val();
+
+        $('#productsMeatProductDB').append('<div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center m-2"><div class="col w-100"><div class="card"><div class="card-body"><h5 class="card-title display-6">'+ productName +'</h5><h6>Category: '+ productCategory +'</h6><h6>Code: '+ productCode +'</h6><h6>Availability: '+ productAvailability +'</h6><h6>Price: Php '+ productPrice +'</h6><p><a class="btn btn-light" data-bs-toggle="collapse"  href="#collapseImageHomeCare" role="button" aria-expanded="false" aria-controls="collapseImageHomeCare">Click to See Image</a></p><div class="row"><div class="col"><div class="collapse multi-collapse" id="collapseImageHomeCare"><div class="card card-body"><img src='+ productImage +' class="card-img-top rounded mx-auto d-block" alt="..." style = "height:30%; width: 50%;"></div></div</div></div><button type="button" class="btn btn-warning w-100" id="addToCart">Add to cart</button></div></div></div></div>');
+    })
+}
+// *
+// * Retrieval of all products
 // !
 
 // ! For handling input in database
